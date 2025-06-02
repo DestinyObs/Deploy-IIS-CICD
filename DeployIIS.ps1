@@ -6,6 +6,12 @@ if (-not ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdent
     exit 1
 }
 
+# Step 1.5: Manually add essential tools to PATH
+$env:Path += ";C:\Program Files\Git\cmd"
+$env:Path += ";C:\Program Files\dotnet"
+$env:Path += ";C:\Windows\System32\inetsrv"  # Needed for New-Website and IIS module commands
+
+
 # Step 2: Install IIS
 Write-Host "Installing IIS..."
 try {
