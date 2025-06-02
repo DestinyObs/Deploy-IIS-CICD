@@ -1,0 +1,19 @@
+name: Deploy to IIS
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: [self-hosted, windows, x64]
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Run Deployment Script
+        shell: pwsh
+        run: |
+          ./cicd-DeployIIS.ps1
