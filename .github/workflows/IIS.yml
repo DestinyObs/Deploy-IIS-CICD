@@ -17,4 +17,4 @@ jobs:
       - name: Run Deployment Script
         shell: powershell
         run: |
-          ./cicd-DeployIIS.ps1
+          ./DeployIIS.ps1
